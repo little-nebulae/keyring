@@ -17,4 +17,16 @@ describe("keyringSetPassword should succeed at setting", () => {
     const result = keyringSetPassword({ entry, password });
     expect(result.success).toBe(true);
   });
+
+  test("an existing password", () => {
+    const entry = new Entry(SERVICE, "success");
+    const password = "topS3cr3tP4$$w0rd";
+    entry.setPassword(password);
+    onTestFinished(() => {
+      entry.deletePassword();
+    });
+
+    const result = keyringSetPassword({ entry, password });
+    expect(result.success).toBe(true);
+  });
 });

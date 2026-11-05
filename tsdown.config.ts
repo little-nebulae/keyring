@@ -2,7 +2,7 @@ import { defineConfig } from "tsdown";
 
 export default defineConfig({
   // Build options
-  platform: "neutral",
+  platform: "node",
   exports: true,
   // .d.ts generation options
   dts: true,

@@ -1,7 +1,8 @@
 import { unwrap } from "@little-nebulae/result";
 import { Entry } from "@napi-rs/keyring";
-import { expect, onTestFinished, test } from "vitest";
+import { assert, expect, onTestFinished, test } from "vitest";
 
+import { KeyringNoEntryError } from "@/errors/no-entry";
 import { keyringGetPassword } from "@/ops/password/get";
 
 const SERVICE = "keyring.password.get.test";
@@ -17,4 +18,13 @@ test("keyringGetPassword should succeed at getting an existing password", () => 
 
   const got = unwrap(keyringGetPassword({ entry }));
   expect(got).toBe(password);
+});
+
+// Failure case
+test("keyringGetPassword should fail with a KeyringNoEntryError when no password is set", () => {
+  const entry = new Entry(SERVICE, "failure");
+
+  const getResult = keyringGetPassword({ entry });
+  assert(getResult.success === false);
+  expect(getResult.error).toBeInstanceOf(KeyringNoEntryError);
 });

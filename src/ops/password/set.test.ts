@@ -8,7 +8,7 @@ const SERVICE = "keyring.password.set.test";
 // Success cases
 describe("keyringSetPassword should succeed at setting", () => {
   test("a new password", () => {
-    const entry = new Entry(SERVICE, "success");
+    const entry = new Entry(SERVICE, "new");
     onTestFinished(() => {
       entry.deletePassword();
     });
@@ -19,7 +19,7 @@ describe("keyringSetPassword should succeed at setting", () => {
   });
 
   test("an existing password", () => {
-    const entry = new Entry(SERVICE, "success");
+    const entry = new Entry(SERVICE, "existing");
     const password = "topS3cr3tP4$$w0rd";
     entry.setPassword(password);
     onTestFinished(() => {

@@ -24,7 +24,7 @@ test("keyringGetPassword should succeed at getting an existing password", () => 
 test("keyringGetPassword should fail with a KeyringNoEntryError when no password is set", () => {
   const entry = new Entry(SERVICE, "failure");
 
-  const getResult = keyringGetPassword({ entry });
-  assert(getResult.success === false);
-  expect(getResult.error).toBeInstanceOf(KeyringNoEntryError);
+  const result = keyringGetPassword({ entry });
+  assert(result.success === false);
+  expect(result.error).toBeInstanceOf(KeyringNoEntryError);
 });

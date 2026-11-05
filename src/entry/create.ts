@@ -1,3 +1,4 @@
+import type { Result } from "@little-nebulae/result";
 import type { EntryOptions } from "@napi-rs/keyring";
 
 import {
@@ -12,6 +13,34 @@ import { platform } from "node:os";
 import { KeyringEntry } from "@/entry/class";
 import { KeyringSecretServiceUnavailableError } from "@/errors/secret-service-unavailable";
 
+export function createKeyringEntry({
+  service,
+  username,
+}: {
+  service: string;
+  username: string;
+}): Result<KeyringEntry, UnexpectedError<unknown, null>>;
+export function createKeyringEntry({
+  service,
+  username,
+  options,
+}: {
+  service: string;
+  username: string;
+  options: { linux: { store: "secret-service" } };
+}): Result<
+  KeyringEntry,
+  KeyringSecretServiceUnavailableError | UnexpectedError<unknown, null>
+>;
+export function createKeyringEntry({
+  service,
+  username,
+  options,
+}: {
+  service: string;
+  username: string;
+  options: { linux: { store: "keyutils" } };
+}): Result<KeyringEntry, UnexpectedError<unknown, null>>;
 export function createKeyringEntry({
   service,
   username,

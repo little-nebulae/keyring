@@ -26,6 +26,9 @@
     "test": "vitest run",
     "try": "oxnode ./src/try.ts"
   },
+  "dependencies": {
+    "@napi-rs/keyring": "2.1.2"
+  },
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.5",
     "@oxc-node/cli": "1.0.1",

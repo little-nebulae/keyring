@@ -176,6 +176,9 @@ importers:
       '@little-nebulae/error':
         specifier: 1.4.1
         version: 1.4.1(type-fest@5.10.0)
+      '@little-nebulae/result':
+        specifier: 1.4.0
+        version: 1.4.0
       '@oxc-node/cli':
         specifier: 1.0.1
         version: 1.0.1
@@ -230,6 +233,9 @@ packages:
     resolution: {integrity: sha512-ngPlRofsIvSXwJ5HoZUwMP5dIQ3QV9MfwcB8IT20UoLD7E2VU2qBmIY9jSIyU5XOf/Kb/wUFdI0YzIxwPAycyg==}
     peerDependencies:
       type-fest: ^5.0.0
+
+  '@little-nebulae/result@1.4.0':
+    resolution: {integrity: sha512-ItjYTaBxSXQf1+bxL6hqpySq2oG+STTCrGLxnHAZKNRrxfVt6MoC0LZvxKaOKB/VNr0uNfKvX/cKHJiWDYb5ZQ==}
 
   '@loaderkit/resolve@1.0.6':
     resolution: {integrity: sha512-G8FdIoF5CypfwmD9rl8BXod5HDn8JqB0CCNBXDTaRZ+yRYhARrrSToX1zg1zy9jX3zLqigsELwhT4gNtkdQAUg==}
@@ -1457,6 +1463,8 @@ snapshots:
   '@little-nebulae/error@1.4.1(type-fest@5.10.0)':
     dependencies:
       type-fest: 5.10.0
+
+  '@little-nebulae/result@1.4.0': {}
 
   '@loaderkit/resolve@1.0.6':
     dependencies:

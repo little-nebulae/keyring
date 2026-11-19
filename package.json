@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.5",
-    "@little-nebulae/error": "1.4.1",
-    "@little-nebulae/result": "1.4.0",
+    "@little-nebulae/error": "1.5.0",
+    "@little-nebulae/result": "1.5.0",
     "@oxc-node/cli": "1.0.1",
     "@types/node": "26.6.6",
     "oxfmt": "0.76.0",

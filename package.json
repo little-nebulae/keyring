@@ -41,7 +41,7 @@
     "publint": "0.3.25",
     "tsdown": "0.23.5",
     "typescript": "7.1.0-beta",
-    "vitest": "5.1.0"
+    "vitest": "5.1.1"
   },
   "peerDependencies": {
     "@little-nebulae/error": "^1.0.0",
